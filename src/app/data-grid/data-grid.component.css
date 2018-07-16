@@ -1,0 +1,33 @@
+.emp {
+  padding: 20px;
+  background-color: yellowgreen;
+}
+
+.ui-table .ui-table-tbody > tr > td {
+  text-align: center!important;
+  color: white;
+  word-wrap: break-word;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.ui-table .ui-table-thead > tr > th {
+  background-color: #5453a4 !important;
+  color: white;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border: 1px solid #111054;
+}
+
+/*.ui-table {
+  border: 2px solid #111054;
+  font-size: 14px;
+}*/
+
+.ui-table .ui-table-tbody > tr:nth-child(odd) {
+  background-color: blue!important;
+}
+
+.ui-table .ui-table-tbody > tr:nth-child(even) {
+  background-color: blueviolet!important;
+}

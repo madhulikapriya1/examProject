@@ -1,0 +1,9 @@
+<div class="ui-g" [ngClass]="'project'">
+  <div class="ui-g-12 ui-md-8 ui-lg-8">
+    <app-data-grid (newEmployee)="showData($event)"></app-data-grid>
+  </div>
+  <div class="ui-g-12 ui-md-4 ui-lg-4">
+    <app-form-grid [employeeDetails]="employeeValue"></app-form-grid>
+  </div>
+</div>
+

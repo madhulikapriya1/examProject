@@ -1,0 +1,39 @@
+<!--<p>
+  form-grid works!
+</p>-->
+<form >
+  <div class="ui-g">
+   <div class="ui-g-12">
+     <button pButton type="button" label="Edit" (click)="onEdit($event)" style="float:right;"></button>
+   </div>
+   </div>
+  <div class="ui-g">
+    <div class="ui-g-3">
+      Name:
+    </div>
+    <div class="ui-g-9">
+      <input type="text" pInputText name="name" [(ngModel)]="employeeValue.name" />
+    </div>
+  </div>
+  <div class="ui-g">
+    <div class="ui-g-3">
+      Designation:
+    </div>
+    <div class="ui-g-9">
+      <input type="text" pInputText name="designation" [(ngModel)]="employeeValue.designation" />
+    </div>
+  </div>
+  <div class="ui-g">
+    <div class="ui-g-3">
+      Skills Summary:
+    </div>
+    <div class="ui-g-9">
+      <textarea [rows]="5" [cols]="20" pInputTextarea autoResize="autoResize" name="skillsSummary" [(ngModel)]="employeeValue.skillsSummary"></textarea>
+    </div>
+  </div>
+  <div class="ui-g">
+   <div class="ui-g-12">
+     <button pButton type="button" label="Save" (click)="getNewEmployee()" ></button>
+   </div>
+   </div>
+</form>

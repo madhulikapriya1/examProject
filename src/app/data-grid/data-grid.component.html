@@ -1,0 +1,32 @@
+<!--<p>
+  data-grid works!
+</p>-->
+<div *ngIf="emp" [ngClass]="'emp'" >
+<p-table [value]="emp">
+    <ng-template pTemplate="header">
+        <tr>
+            <th *ngFor="let col of cols">
+                {{col.header}}
+            </th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-employee let-i="rowIndex">
+        <tr>
+            <td *ngFor="let col of cols">
+            
+                    {{employee[col.field]}}
+            </td>
+        </tr>
+    </ng-template>
+     <!--<ng-template pTemplate="body" let-employee let-i="rowIndex">
+        <tr>
+            <td *ngIf="rowIndex.value">
+            
+                    {{employee[col.field]}}
+            </td>
+        </tr>
+    </ng-template>-->
+    
+</p-table>
+
+</div>
