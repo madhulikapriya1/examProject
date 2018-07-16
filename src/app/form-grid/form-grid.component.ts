@@ -9,8 +9,10 @@ import { EmployeeService } from "../employee.service";
 })
 export class FormGridComponent implements OnInit {
   // subscription:Subscription;
+   // subscription:Subscription;
   @Input() employeeValue: Employee;
   @Input() employeeDetails: any;
+ 
   // @Input() employeeDetails: any;
   @Output() newEmployee = new EventEmitter<Employee>();
   editedItem: Employee[];
@@ -18,13 +20,15 @@ export class FormGridComponent implements OnInit {
   name: string;
   skillsSummary: string;
   designation: string;
-  newName:string;
-  newDesignation: string;
-  newSkillsSummary: string;
+  
   constructor(private employeeService: EmployeeService) { }
 
   ngOnInit() {
+ this.employeeService.change.subscribe( Employee => {
+   this.employeeValue = Employee;
+ });
 
+     
     if (this.employeeValue === undefined) {
       this.employeeValue = {
         name: 'priya',
@@ -35,20 +39,21 @@ export class FormGridComponent implements OnInit {
     }
     
   }
-  // onEdit($event) {
-  // this.editMode=true;
-  // this.editedItem = this.employeeService.getNewEmployee(i){
-  //   newName: this.employeeValue.name,
+  onEdit($event) {
+  this.editMode=true;
+//   this.editedItem = this.employeeService.getNewEmployee(i){
+//     newName: this.employeeValue.name,
 
-  // }
-  // }
+//   }
+  }
        
 
-  getNewEmployee(){
-    this.newEmployee.emit(this.employeeValue);
-  }
+//   getNewEmployee(){
+//     this.newEmployee.emit(this.employeeValue);
+//   }
 
-  onSave($event) {
-   
-  }
+  savingData() {
+  this.employeeDetails = this.employeeValue;
+ };
+       
 }
