@@ -22,5 +22,9 @@ export class EmployeeService {
       
          this.change.emit(this.employeeValue);
     }
+   getEmployeeRow(rowData){
+      this.row=rowData;
+      this.change.emit(rowData);
+     }
 }
 
