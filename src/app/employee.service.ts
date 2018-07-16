@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { Injectable, Output, EventEmitter } from '@angular/core';
 import { Employee } from './employee.interface';
 import { Response } from '@angular/http';
 import {  map } from 'rxjs/operators';
@@ -9,14 +9,18 @@ import { Observable} from 'rxjs';
   providedIn: 'root'
 })
 export class EmployeeService {
-employeeEdited:Employee[];
-index=0;
+ employeeValue:Employee;
+
+ @Output() change: EventEmitter<any> = new EventEmitter();
+
   constructor(private http: HttpClient) { }
   
     getEmployee() : Observable<any> {
       return this.http.get('assets/emplooyee.json');
     }
-    getNewEmployee(index){
-      return this.employeeEdited;
+    getnewEmployee(){
+      
+         this.change.emit(this.employeeValue);
     }
 }
+
