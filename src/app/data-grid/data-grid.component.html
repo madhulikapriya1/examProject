@@ -10,9 +10,9 @@
             </th>
         </tr>
     </ng-template>
-    <ng-template pTemplate="body" let-employee let-i="rowIndex" (click)="show(i)" >
+    <ng-template pTemplate="body" let-employee let-i="rowIndex"  >
         <tr>
-            <td *ngFor="let col of cols" >
+            <td *ngFor="let col of cols" (click)="show(i)">
             
                     {{employee[col.field]}}
             </td>
