@@ -10,15 +10,15 @@
             </th>
         </tr>
     </ng-template>
-    <ng-template pTemplate="body" let-employee let-i="rowIndex">
+    <ng-template pTemplate="body" let-employee let-i="rowIndex" (click)="show(i)" >
         <tr>
-            <td *ngFor="let col of cols">
+            <td *ngFor="let col of cols" >
             
                     {{employee[col.field]}}
             </td>
         </tr>
     </ng-template>
-     <!--<ng-template pTemplate="body" let-employee let-i="rowIndex">
+     <!--<ng-template pTemplate="body" let-employee let-i="rowIndex" >
         <tr>
             <td *ngIf="rowIndex.value">
             
