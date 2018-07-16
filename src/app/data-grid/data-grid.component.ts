@@ -27,6 +27,8 @@ export class DataGridComponent implements OnInit {
   show(i) {
    this.visible=true;
     this.employeeValue = this.emp[i];
+     console.log(this.employeeValue);
+    this.employeeService.getnewEmployee();
   }
 
   getAnEmployee(){
